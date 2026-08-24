@@ -9,13 +9,14 @@ function App() {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
+  const [onlyComplaints, setOnlyComplaints] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault()
     if (!query) return
 
     setLoading(true)
-    const data = await searchReviews(query)
+    const data = await searchReviews(query , onlyComplaints)
     setResults(data)
     setLoading(false)
   }
