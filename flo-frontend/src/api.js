@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000', // FastAPI Backend Adresimiz
+    baseURL: 'https://laxryy-flo-ai-backend.hf.space/', // FastAPI Backend Adresimiz
 });
 
 export const searchReviews = async (query) => {
