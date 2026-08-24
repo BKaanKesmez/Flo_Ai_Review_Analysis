@@ -37,14 +37,18 @@ def read_root():
 
 # 3. Anlamsal Arama (Semantic Search / RAG Retrieval) Uç Noktası
 @app.get("/search")
-def search_reviews(q: str = Query(..., description="Aranacak şikayet veya yorum"), top_k: int = 3):
+def search_reviews(q: str = Query(..., description="Aranacak şikayet veya yorum"), top_k: int = 3 , only_complaints: bool = Query(False)):
     # Soruyu vektöre çevir
     query_embedding = model.encode([q]).tolist()
+
+    # Sadece 3 yıldız ve altı olanları filtrele (Eğer only_complaints True ise)
+    where_filter = {"rating": {"$lte": 3}} if only_complaints else None
     
     # Veritabanında ara
     results = collection.query(
         query_embeddings=query_embedding,
-        n_results=top_k
+        n_results=top_k,
+        where=where_filter
     )
     
     # API'nin döndüreceği temiz JSON formatı

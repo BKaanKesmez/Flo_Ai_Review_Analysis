@@ -43,6 +43,19 @@ function App() {
             Ara
           </button>
         </form>
+        <div className="mt-4 flex items-center justify-center space-x-2">
+            <input 
+                type="checkbox" 
+                id="complaint-filter"
+                className="w-5 h-5 text-orange-600 rounded"
+                checked={onlyComplaints}
+                onChange={(e) => setOnlyComplaints(e.target.checked)}
+            />
+            <label htmlFor="complaint-filter" className="text-gray-700 font-medium">
+                Sadece kronik şikayetleri (1-3 Yıldız) getir
+            </label>
+        </div>
+        
 
         {loading && <p className="text-center text-orange-600 font-medium">Yapay Zeka Analiz Ediyor...</p>}
 
