@@ -36,7 +36,7 @@ Proje mikroservis prensiplerine uygun olarak iki ana modülde geliştirilmiştir
 ## 📂 Proje Klasör Yapısı
 
 Sistem; veri hazırlama, analiz, veritabanı inşası ve sunucu yayınlaması olmak üzere geniş bir Ar-Ge ve modüler script yelpazesinden oluşmaktadır:
-
+```text
 📦 flo_rag_project
  ┣ 📂 .github/               # CI/CD otomasyon (GitHub Actions) iş akışları
  ┣ 📂 chroma_db/             # Vektörleştirilmiş müşteri yorumları ve metadataları (Veritabanı)
@@ -64,6 +64,7 @@ Sistem; veri hazırlama, analiz, veritabanı inşası ve sunucu yayınlaması ol
  ┣ 📜 docker-compose.yml     # Çoklu konteyner orkestrasyonu yapılandırması
  ┣ 📜 Dockerfile             # Hugging Face deployment için konteyner yapılandırması
  ┗ 📜 README.md              # Proje dokümantasyonu
+ ```
 
 
  ## 📡 API Dokümantasyonu (Endpoint'ler)
