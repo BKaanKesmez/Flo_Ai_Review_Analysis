@@ -1,0 +1,8 @@
+pandas
+chromadb
+sentence-transformers
+streamlit
+fastapi
+uvicorn
+scikit-learn
+hdbscan

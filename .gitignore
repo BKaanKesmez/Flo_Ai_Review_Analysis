@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+.env
+chroma_db/
+*.csv
+.DS_Store
+# Frontend (React) İstenmeyen Dosyalar
+flo-frontend/node_modules/
+flo-frontend/dist/

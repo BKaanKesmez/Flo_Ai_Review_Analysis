@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api_service:
+    build: .
+    container_name: flo_rag_api
+    ports:
+      - "8000:8000"
+    # Sadece kodda bir değişiklik yaptığımızda konteyneri baştan kurmamak için
+    # yerel klasörü konteynerin içine bağlıyoruz (Volume mapping - Geliştirme ortamı için)
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
